@@ -50,11 +50,45 @@ public class Start {
         WebElement el1 = list.get(1); //у Home Component, в массиве, индекс 1, т.к. он наxодится на втором месте
         el1.click();
 
-        //by Id
+        //By.Id
         wd.findElement(By.id("root"));
 
-        //by Class
+        //By.Class
         wd.findElement(By.className("container"));
+
+        //By.linkText
+        wd.findElement(By.linkText("ABOUT"));
+        wd.findElement(By.partialLinkText("AB"));
+
+        //By.name
+        wd.findElement(By.name("name"));
+        wd.findElement(By.name("surename"));
+
+        //By.ccsSelector
+        //tagname
+        wd.findElement(By.cssSelector("h1"));
+        wd.findElement(By.cssSelector("a"));
+
+        //id
+        wd.findElement(By.cssSelector("#root"));
+
+        //class
+        wd.findElement(By.cssSelector(".container"));
+
+        //attribute
+        wd.findElement(By.cssSelector("[href='/home']"));
+        wd.findElement(By.cssSelector("[href]"));
+
+        wd.findElement(By.cssSelector("[href='/home']"));
+        wd.findElement(By.cssSelector("[href ^='/ho']"));  //a[starts-with(@href,'/ho')]  /// start with /ho
+        wd.findElement(By.cssSelector("[href *='om']")); // containce - om
+        wd.findElement(By.cssSelector("[href $='me']")); // end of me
+
+        wd.findElement(By.cssSelector("div#root.container"));
+        wd.findElement(By.cssSelector("a[href='/home']"));
+
+
+        //By.xPath
 
 
 
