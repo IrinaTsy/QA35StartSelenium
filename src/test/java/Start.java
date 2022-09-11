@@ -1,6 +1,10 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class Start {
     WebDriver wd;
@@ -34,6 +38,27 @@ public class Start {
         //fill password: find element Password --> type "Password"
         //login submit: find button Login --> click on Login button
         //class Assert: expected result = actual result
+
+        //by tagName
+        // h1 - two elements PHONEBOOK and Home Component
+        WebElement el = wd.findElement(By.tagName("h1")); //Проверяя сверxу вниз Selenium наxодит первый
+                                                            //попавшийся компонент с таким TagName, возвращает его
+                                                            //и останавливается.
+        el.click();         //нажать на наденный элемент
+
+        List<WebElement> list = wd.findElements(By.tagName("h1"));
+        WebElement el1 = list.get(1); //у Home Component, в массиве, индекс 1, т.к. он наxодится на втором месте
+        el1.click();
+
+        //by Id
+        wd.findElement(By.id("root"));
+
+        //by Class
+        wd.findElement(By.className("container"));
+
+
+
+
         wd.quit();
     }
 }
